@@ -22,6 +22,7 @@ User (Streamlit UI)
    ML Model (Scikit-learn Pipeline)
 
 📂 Project Structure
+
 Co2-prediction/
 │
 ├── api/
