@@ -1,0 +1,8 @@
+#! 0-co2-prediction-namespace.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: co2-prediction
+    labels:
+        com.docker.compose.project: co2-prediction

@@ -1,0 +1,32 @@
+#! streamlit-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: streamlit
+    namespace: co2-prediction
+    labels:
+        com.docker.compose.project: co2-prediction
+        com.docker.compose.service: streamlit
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: co2-prediction
+            com.docker.compose.service: streamlit
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: co2-prediction
+                com.docker.compose.service: streamlit
+                com.docker.compose.network.default: "true"
+        spec:
+            containers:
+                - name: streamlit
+                  image: co2-prediction-streamlit
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                    - name: streamlit-8501
+                      containerPort: 8501
